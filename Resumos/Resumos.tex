@@ -341,4 +341,241 @@ omitir alguns parâmetros.
 
 \subsection{Funções Recursivas}
 
+\begin{lstlisting}
+  # devolve factorial de um numero n
+  def factorial(n):
+    if n==0:
+      return 1
+    if n>0:
+      return n*factorial(n-1)
+
+  # devolve o comprimento de uma lista
+    def comprimento(lista):
+      if lista==[]:
+        return 0
+      return 1+comprimento(lista[1:])
+\end{lstlisting}
+
+\begin{flushleft}
+  Esta última função, vai funcionar da seguinte forma:
+\end{flushleft}
+
+\begin{lstlisting}
+  comprimento([1, 2, 3])
+  =
+  1 + comprimento([2, 3])
+  =
+  1 + (1 + comprimento([3]))
+  =
+  1 + (1 + (1 + comprimento([])))
+  =
+  1 + (1 + (1 + 0))
+  =
+  3
+\end{lstlisting}
+
+\begin{lstlisting}
+  # verifica se um elemento e membro de uma lista
+  def membro(x,lista):
+    if l==[]:
+      return False
+    return (lista[0]==x) or membro(x,lista[1:])
+\end{lstlisting}
+
+\pagebreak
+
+\begin{lstlisting}
+
+  # devolve uma lista com os elementos da lista de entrada por ordem inversa
+  def inverter(lista):
+    if lista==[]:
+      return []
+    inv = inverter(lista[1:])
+    inv[len(inv):] = [lista[0]]
+    return inv
+\end{lstlisting}
+
+\subsection{Expressões lambda}
+
+São \textbf{expressões cujo valor é uma função}. Funções que recebem expressões lambda como
+entrada e as retornam como saída chamam-se funções de ordem superior. Exemplo:
+
+\begin{lstlisting}
+  lambda x: x*x
+
+  # Pode ser atribuida a uma variavel
+  m = lambda x,y: math.sqrt(x**2 + y**2)
+  m(1, 2) # 2.23606797749979
+\end{lstlisting}
+
+Como qualquer objeto, uma expressão lambda pode ser passada como:
+
+\begin{lstlisting}
+  # Tendo uma func h que produz f(x)*X
+  def h(f, x): return f(x)*x
+
+  # Para usar:
+  h(lambda x: x+1, 7) # 56
+\end{lstlisting}
+
+Podem ser produzidas por outras funções:
+
+\begin{lstlisting}
+  def faz_incrementador(n):
+    return lambda x: x+n
+
+  # Para usar:
+  f = faz_incrementador(1)
+  f(10) # 11
+\end{lstlisting}
+
+As expressões lambda são tembém conhecidas como \uline{expressões funcionais}.
+As funções que recebem estas expressões como entrada e/ou produzem expressões
+lambda como saída chamam-se \uline{funções de ordem superior}.
+
+\begin{flushleft}
+  \textbf{Nota importante:} As expressões lambda só são
+  úteis enquanto são simples. Uma função
+  complexa merece ser escrita de forma clara
+  numa definição (def) à parte.
+\end{flushleft}
+
+\pagebreak
+
+\subsection{Aplicar uma função a uma lista}
+
+Para tal podemos usar a função \textbf{map()}, predefinida em Python,
+retorna um iterador que pode ser convertido numa lista. Esta função é
+equivalente a:
+
+\begin{lstlisting}
+  def aplicar(funcao, lista):
+    if lista==[]:
+      return []
+    return [funcao(lista[0])] + aplicar(funcao, lista[1:])
+\end{lstlisting}
+
+\subsection{Filtrar uma lista}
+
+Para tal podemos usar a função \textbf{filter()}, predefinida em Python,
+retorna um iterador que pode ser convertido numa lista. Esta função é
+equivalente a:
+
+\begin{lstlisting}
+  def filtrar(funcao, lista):
+    if lista==[]:
+      return []
+    if funcao(lista[0]):
+      return [lista[0]] + filtrar(funcao, lista[1:])
+    return filtrar(funcao, lista[1:])
+\end{lstlisting}
+
+\subsection{Reduzir uma lista a um valor}
+
+Muitos dos procedimentos aplicados a listas consistem em combinar a cabeça da lista com o
+resultado da chamada recursiva sobre os restantes elementos, retornando um valor “neutro”
+pré-definido para a lista vazia. Em Python, podemos usar a função \textbf{reduce()} da
+biblioteca \textbf{functools}.
+
+\begin{center}
+  \includegraphics[scale=0.3]{5}
+\end{center}
+
+\begin{lstlisting}
+  # Dada uma lista, uma func de combinacao e um elemento neutro
+  def reduzir(lista, fcomb, neutro):
+    if lista==[]:
+      return neutro
+    return fcomb(lista[0], reduzir(lista[1:], fcomb, neutro))
+\end{lstlisting}
+
+\pagebreak
+
+\subsection{Listas por compreensão (list comprehension)}
+
+São mecanismos compactos para processar os elementos de uma lista (alguns ou todos), podendo ser aplicadas
+não só a estas como também a tuplos ou cadeias de caracteres (str), o resultado é uma lista. Podem funcionar com a
+função pré-definida \textbf{map()} ou \textbf{filter()}.
+
+\[<expr> \textbf{for} <var> \textbf{in} <seq> \textbf{if} <condition>\]
+
+\begin{lstlisting}
+  [x**2 for x in [2, 3, 4]] # Output: [4, 9, 16]
+  map(lambda x: x**2, [2, 3, 4]) # Igual
+
+  [x for x in [2, 3, 4] if x%2==0] # Output: [2, 4]
+  filter(lambda x: x%2==0, [2, 3, 4]) # Igual
+\end{lstlisting}
+
+Dada uma lista de listas e uma função, podemos aplicar uma função
+a cada um dos elementos das listas, retornando a concatenação
+das listas resultantes.
+
+\begin{lstlisting}
+  [f(y) for x in lista for y in x]
+
+  # Exemplo:
+  lista = [[1, 2, 3], [4, 5, 6]]
+  [x+1 for x in lista for y in x] # [2, 3, 4, 5, 6, 7]
+\end{lstlisting}
+
+\subsection{Classes}
+
+Tal como nas restantes linguagens Orientadas a Objetos (OO), em Python uma classe define
+um conjunto de objetos caracterizados por diversos atributos e métodos e organizam-se numa
+hierarquia que permite a herança.
+
+\begin{lstlisting}
+  # sintaxe
+  class <nome-classe>:
+    <decl-1>
+    ...
+    <decl-n>
+\end{lstlisting}
+
+\begin{flushleft}
+  \textbf{Nota:} Tal como acontece com as variáveis normais, também
+  os atributos das classes \uline{não são declarados}. Os atributos são
+  acessados através da notação "objeto.atributo". Podemos, em qualquer momento,
+  criar um novo atributo para um objeto, bastando para isso atribuir-lhe um valor.
+\end{flushleft}
+
+Existe ainda classes derivadas/herança, que herdam os métodos e atributos da
+classe mãe, sendo possível uma classe ter várias classes mães.
+
+\pagebreak
+
+\subsubsection{Métodos e atributos pré-definidos}
+
+\begin{flushleft}
+  \textbf{Métodos:}
+  \begin{itemize}
+    \item \textbf{\_\_init\_\_} - Construtor da classe;
+    \item \textbf{\_\_str\_\_} - Conversão para cadeia de caracteres;
+    \item \textbf{\_\_repr\_\_} - Representação em cadeia de caractéres
+    que aparece na consola do interpretador;
+  \end{itemize}
+
+  \textbf{Atributos:}
+  \begin{itemize}
+    \item \textbf{\_\_class\_\_} - identifica a classe de um dado objecto
+  \end{itemize}
+\end{flushleft}
+
+\subsubsection{list de Python é uma classe}
+
+\begin{flushleft}
+  Tem os seguintes métodos:
+  \begin{itemize}
+    \item \textbf{append(x)} - Adiciona x ao fim da lista;
+    \item \textbf{extend(L)} - Adiciona os elementos da lista L ao fim da lista;
+    \item \textbf{insert(i, x)} - Adiciona x na posição i da lista;
+    \item \textbf{remove(x)} - Remove a primeira ocorrência de x na lista;
+    \item \textbf{index(x)} - Devolve o índice da primeira ocorrência de x na lista;
+    \item \textbf{sort()} - Ordena a lista (modifica a lista);
+  \end{itemize}
+\end{flushleft}
+
+\section{Tópicos de Inteligência Artificial}
+
 \end{document}

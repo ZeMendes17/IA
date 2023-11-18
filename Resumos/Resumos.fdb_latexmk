@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1700275285 "/home/mendes/Desktop/IA/Resumos/Resumos.tex" "Resumos.pdf" "Resumos" 1700275286
+["pdflatex"] 1700316278 "/home/mendes/Desktop/IA/Resumos/Resumos.tex" "Resumos.pdf" "Resumos" 1700316279
   "/etc/texmf/web2c/texmf.cnf" 1697307530 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/mendes/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1697311057 11524 270ea80aaa0cabf6b47122c0c5a9462f ""
-  "/home/mendes/Desktop/IA/Resumos/Resumos.tex" 1700275285 11291 87e03b294406433d5427ae0b6a004ad5 ""
+  "/home/mendes/Desktop/IA/Resumos/Resumos.tex" 1700316277 18006 a0b7b53e57142b1065aa793ebabe8a39 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -78,8 +78,9 @@
   "Images//2.png" 1700259866 12701 6be3a804f2be4a4e302204d4e2e4845b ""
   "Images//3.png" 1700272733 37721 b3a070b0d1a46b2625386923378c8d5f ""
   "Images//4.png" 1700275025 24888 d20cc9e7bd8cf96cef7d59ad4714a1ff ""
-  "Resumos.aux" 1700275286 2562 e2538d77e1a87ea9e3a2a0ab0d42b66d "pdflatex"
-  "Resumos.tex" 1700275285 11291 87e03b294406433d5427ae0b6a004ad5 ""
+  "Images//5.png" 1700314368 29178 6f34f9f2ce65213f98c824a3c0ff57a6 ""
+  "Resumos.aux" 1700316279 3660 18bf5e6b4704ccd01b65776d4c2aa706 "pdflatex"
+  "Resumos.tex" 1700316277 18006 a0b7b53e57142b1065aa793ebabe8a39 ""
   "UA.jpg" 1700253097 24745 bb294df60b1949399db2c463a4c9dbd7 ""
   "UA.png" 1700253097 4155 29baef92e33889c7f171c7001cfe64ba ""
   (generated)
