@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.14)  18 NOV 2023 14:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.14)  18 NOV 2023 19:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -320,22 +320,132 @@ Package pdftex.def Info: UA.jpg  used on input line 547.
  [9]
 File: UA.jpg Graphic file (type jpg)
 <use UA.jpg>
-Package pdftex.def Info: UA.jpg  used on input line 581.
+Package pdftex.def Info: UA.jpg  used on input line 595.
 (pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
- [10] (./Resumos.aux) ) 
+ [10]
+<./Images//6.png, id=60, 667.49374pt x 256.96pt>
+File: ./Images//6.png Graphic file (type png)
+<use ./Images//6.png>
+Package pdftex.def Info: ./Images//6.png  used on input line 603.
+(pdftex.def)             Requested size: 200.24966pt x 77.0886pt.
+<./Images//7.png, id=61, 574.145pt x 238.8925pt>
+File: ./Images//7.png Graphic file (type png)
+<use ./Images//7.png>
+Package pdftex.def Info: ./Images//7.png  used on input line 629.
+(pdftex.def)             Requested size: 172.24483pt x 71.66829pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 633.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [11 <./Images//6.png> <./Images//7.png>]
+<./Images//8.png, id=67, 843.15pt x 429.605pt>
+File: ./Images//8.png Graphic file (type png)
+<use ./Images//8.png>
+Package pdftex.def Info: ./Images//8.png  used on input line 637.
+(pdftex.def)             Requested size: 295.10692pt x 150.364pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 673.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [12 <./Images//8.png>]
+<./Images//9.png, id=73, 473.77pt x 294.09875pt>
+File: ./Images//9.png Graphic file (type png)
+<use ./Images//9.png>
+Package pdftex.def Info: ./Images//9.png  used on input line 697.
+(pdftex.def)             Requested size: 189.50464pt x 117.6374pt.
+<./Images//10.png, id=74, 747.79375pt x 412.54124pt>
+File: ./Images//10.png Graphic file (type png)
+<use ./Images//10.png>
+Package pdftex.def Info: ./Images//10.png  used on input line 707.
+(pdftex.def)             Requested size: 261.73172pt x 144.39159pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 711.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [13 <./Images//9.png> <./Images//10.png>]
+<./Images//11.png, id=80, 476.78125pt x 295.1025pt>
+File: ./Images//11.png Graphic file (type png)
+<use ./Images//11.png>
+Package pdftex.def Info: ./Images//11.png  used on input line 715.
+(pdftex.def)             Requested size: 190.7091pt x 118.0389pt.
+<./Images//12.png, id=81, 779.91376pt x 419.5675pt>
+File: ./Images//12.png Graphic file (type png)
+<use ./Images//12.png>
+Package pdftex.def Info: ./Images//12.png  used on input line 723.
+(pdftex.def)             Requested size: 272.9739pt x 146.85081pt.
+<./Images//13.png, id=82, 354.32375pt x 312.16624pt>
+File: ./Images//13.png Graphic file (type png)
+<use ./Images//13.png>
+Package pdftex.def Info: ./Images//13.png  used on input line 736.
+(pdftex.def)             Requested size: 141.72697pt x 124.86427pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 740.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [14 <./Images//11.png> <./Images//12.png> <./Images//13.png>]
+<./Images//14.png, id=89, 473.77pt x 286.06876pt>
+File: ./Images//14.png Graphic file (type png)
+<use ./Images//14.png>
+Package pdftex.def Info: ./Images//14.png  used on input line 747.
+(pdftex.def)             Requested size: 189.50464pt x 114.42546pt.
+<./Images//15.png, id=90, 473.77pt x 289.08pt>
+File: ./Images//15.png Graphic file (type png)
+<use ./Images//15.png>
+Package pdftex.def Info: ./Images//15.png  used on input line 748.
+(pdftex.def)             Requested size: 189.50464pt x 115.62994pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 789.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [15 <./Images//14.png> <./Images//15.png>]
+<./Images//16.png, id=96, 782.925pt x 432.61626pt>
+File: ./Images//16.png Graphic file (type png)
+<use ./Images//16.png>
+Package pdftex.def Info: ./Images//16.png  used on input line 793.
+(pdftex.def)             Requested size: 274.02785pt x 151.41795pt.
+<./Images//17.png, id=97, 728.7225pt x 256.96pt>
+File: ./Images//17.png Graphic file (type png)
+<use ./Images//17.png>
+Package pdftex.def Info: ./Images//17.png  used on input line 801.
+(pdftex.def)             Requested size: 255.05669pt x 89.93733pt.
+<./Images//18.png, id=98, 519.9425pt x 298.11375pt>
+File: ./Images//18.png Graphic file (type png)
+<use ./Images//18.png>
+Package pdftex.def Info: ./Images//18.png  used on input line 817.
+(pdftex.def)             Requested size: 171.58156pt x 98.37784pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 824.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [16 <./Images//16.png> <./Images//17.png> <./Images//18.png>]
+<./Images//19.png, id=105, 193.72375pt x 356.33125pt>
+File: ./Images//19.png Graphic file (type png)
+<use ./Images//19.png>
+Package pdftex.def Info: ./Images//19.png  used on input line 828.
+(pdftex.def)             Requested size: 67.80432pt x 124.71779pt.
+<./Images//20.png, id=106, 706.64pt x 327.2225pt>
+File: ./Images//20.png Graphic file (type png)
+<use ./Images//20.png>
+Package pdftex.def Info: ./Images//20.png  used on input line 838.
+(pdftex.def)             Requested size: 247.3277pt x 114.52959pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 851.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [17 <./Images//19.png> <./Images//20.png>] (./Resumos.aux) ) 
 Here is how much of TeX's memory you used:
- 5585 strings out of 480247
- 80507 string characters out of 5896150
+ 5750 strings out of 480247
+ 83298 string characters out of 5896150
  611917 words of memory out of 5000000
- 23470 multiletter control sequences out of 15000+600000
+ 23631 multiletter control sequences out of 15000+600000
  478029 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,15n,62p,244b,1251s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/mendes/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on Resumos.pdf (11 pages, 259866 bytes).
+Output written on Resumos.pdf (18 pages, 594232 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 151 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

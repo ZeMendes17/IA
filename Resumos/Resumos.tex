@@ -578,4 +578,274 @@ classe mãe, sendo possível uma classe ter várias classes mães.
 
 \section{Tópicos de Inteligência Artificial}
 
+\subsection{Definição de "Inteligência"}
+
+Segundo a sua definição lexical, \textbf{inteligência} é a capacidade de pensar, raciocionar, adquirir e
+aplicar conhecimento. É o conjunto de capacidades superiores da mente.
+
+\vspace{2mm}
+
+O seu estudo envolve várias vertendes, desde a já referida aquisição, representação e
+armazenamento de conhecimento, a geração de comportamento inteligente, a origem das
+motivações, emoções e prioridades, como as perceções dão origem a entidades simbólicas,
+como raciocionar sobre o passado, planear o futuro, como surge a ilusão, a crença, esperança,
+amor \dots
+
+\pagebreak
+
+\subsection{Defunição de "Inteligência Artificial"}
+
+É a disciplina que estuda as teoriaas e técnicas necessárias ao desenvolvimento
+de "artefactos" inteligentes. Historicamente, estas vertententes resumem-se a quatro grandes abordagens, definidas por
+Russel \& Norvig (1995).
+
+\begin{center}
+  \includegraphics[scale=0.3]{6}
+\end{center}
+
+As \textbf{humanas} focam-se no ser humano, desenvolvendo uma ciência empírica, baseada na
+hipótese e na experiência. Por outro lado, a \textbf{abordagem racional} envolve uma combinação de
+matemática e engenharia.
+
+\begin{flushleft}
+  \textbf{Nota:} No início estava muito focada na imitação das capacidades do ser humano, no entanto, mais recentemente tem-se
+  voltado mais para a racionalidade como referêcia. Atualmente é maioritariamente utilizada para a resolução de problemas concretos e pouco abrangentes, foncando-se
+  na melhor utilização dos recursos de forma racional.
+\end{flushleft}
+
+\subsection{Definição de "Agente"}
+
+Segundo o dicionário, pode ser uma entidade com poder ou autoridade para agir, ou
+uma entidade que atua em representação de outrem.
+
+\vspace{2mm}
+
+\begin{flushleft}
+  \textbf{Agente -} Definido como uma entidade com capacidade de obter informação sobre o seu ambiente
+  (sensores) e de executar (atuadores) ações em função dessa informação por Russel e Norvig.
+\end{flushleft}
+
+\begin{center}
+  \includegraphics[scale=0.3]{7}
+\end{center}
+
+\pagebreak
+
+\subsubsection{Exemplo de agentes}
+
+\begin{center}
+  \includegraphics[scale=0.35]{8}
+\end{center}
+
+\subsection{Agir como o ser humano - Teste de Turing}
+
+O \textbf{teste de Turing} (1950) pretendeu estebelecer a definição operacional para o comportamento
+inteligente de nível humano, que consistia em submeter o artefacto a um interrogatório através
+de um terminal de texto. Se o humano não conseguir concluir que está a interrogar uma
+máquina, então conclui-se que o artefacto é inteligente.
+
+\subsection{A "sala chinesa" de Searle}
+
+Esta teoria foi refutada por \textbf{Searle}, um filósofo americano, com o argumento da \textbf{Sala Chinesa}.
+Neste, descreveu o cenário de colocar um humano que não percebe chinês fechado dentro de
+uma sala com um livro escrito na sua língua que ensine chinês a ser interrogado por outro
+humano através de papéis passados por baixo da porta.
+
+\vspace{2mm}
+
+\textbf{Searle} defendeu que apesar de não perceber os papéis entregues por baixo da porta, o
+humano iria conseguir traduzi-los através do livro e elaborar respostas. Fora da sala, o
+interrogador iria ter a ilusão de que o interrogado sabia chinês. No entanto, nem o humano, nem
+a sala, nem o livro percebem chinês. Logo, deduziu que não há qualquer compreensão de
+chinês naquela sala. No entanto, podemos contra-argumentar que,
+embora individualmente, os componentes do sistema não percebam chinês
+(a sala, o humano, o livro, as folhas de papel), não compreendam chinês,
+\textbf{o sistema no seu conjunto compreende chinês}.
+
+\vspace{2mm}
+
+Foi esta a premissa para a sua argumentação de que os computadores apenas fazem uso de
+regras sintáticas para manipular o texto, sem ter qualquer entendimento do seu significado ou
+semântica. Para ele a inteligência é um processo biológico, que apenas pode ser simulado
+pelas máquinas, mas nunca adquirido.
+
+\pagebreak
+
+\subsection{Tipos e arquiteturas de agentes}
+
+\begin{flushleft}
+  \textbf{Tipos de agentes:}
+  \begin{itemize}
+    \item Reativo simples;
+    \item Reativo com estado;
+    \item Deliberativos orientados a objetivos;
+    \item Deliberativos orientados por funções de utilidades;
+  \end{itemize}
+
+  \textbf{Arquiteturas de agentes:}
+  \begin{itemize}
+    \item Subsunção;
+    \item Três torres;
+    \item Três camadas;
+    \item CARL;
+  \end{itemize}
+\end{flushleft}
+
+\subsubsection{Agentes reativos: simples}
+
+\begin{center}
+  \includegraphics[scale=0.4]{9}
+\end{center}
+
+Também conhecidos por agentes de \textbf{estímulo-resposta} (ou "sistemas de produção"), este tipo de agente apresenta um
+conjunto de sensores, através dos quais recebe uma perceção do estado do mundo, sobre a
+qual aplica um conjunto de regras (regras de condição-ação, também conhecido
+como "regras de situação-ação" ou "regras de produção") e executa as ações
+correspondentes.
+
+\begin{center}
+  \includegraphics[scale=0.35]{10}
+\end{center}
+
+\pagebreak
+
+\subsubsection{Agentes reativos: com estado interno}
+
+\begin{center}
+  \includegraphics[scale=0.4]{11}
+\end{center}
+
+Funcionam de forma semelhante ao
+anterior, mas para além dos sensores, fazem uso de um \textbf{estado interno} e do histórico de ações
+anteriores para construir a perceção do estado do mundo.
+
+\begin{center}
+  \includegraphics[scale=0.35]{12}
+\end{center}
+
+
+\subsubsection*{Sistemas de Quadro Preto}
+
+Podem ser vistos como uma
+elaboração dos sistemas reactivo
+com estado interno. Uma "\textbf{fonte de conhecimento (FC)} é um programa que vai
+fazendo alterações no Quadro Preto. Uma FC pode ser vista como um especialista
+num dado domínio. Tipicamente, cada FC rege-se por um conjunto de regras de situação-ação.
+
+\begin{center}
+  \includegraphics[scale=0.4]{13}
+\end{center}
+
+\pagebreak
+
+\subsubsection{Agentes deliberativos}
+
+Contrariamente aos anteriores, executam as ações com base em \textbf{objetivos} ou \textbf{função de
+utilidade}.
+
+\begin{center}
+  \includegraphics[scale=0.4]{14}
+  \includegraphics[scale=0.4]{15}
+\end{center}
+
+\begin{flushleft}
+  \textbf{Primeira figura:} Agente deliberativo orientado a objetivos.
+
+  \textbf{Segunda figura:} Agente deliberativo orientado por funções de utilidade.
+\end{flushleft}
+
+\begin{flushleft}
+  \textbf{Nota:} A função de atividade é uma função que avalia a relevância de cada estado para o agente.
+\end{flushleft}
+
+\subsection{Propriedades do mundo de um agente}
+
+Visto como se define um agente e os seus tipos, falta perceber como se caracteriza o seu
+ambiente. Este pode apresentar várias propriedades.
+
+\begin{itemize}
+  \item \textbf{Acessibilidade -} O mundo é \textbf{acessível} se os sensores do agente tem acesso a toda a informação sobre o ambiente
+  (descrição completa), ou pelo menos a toda a informação relevante.
+  para o processo de escolha das ações (\textbf{efetivamente acessível}).
+  \item \textbf{Determinismo -} Se o estado resultante da
+  execução de uma ação é apenas e totalmente determinado pelo estado atual e pelos efeitos esperados
+  da ação.
+  \item \textbf{Munudo episódico -} Cada episódio de perceção-ação é totalmente indepente dos outros.
+  \item \textbf{Dinamismo -}  O mundo é \textbf{dinâmico} se o seu estado pode mudar
+  enquanto o agente delibera; caso contrário, o mundo diz-se \textbf{estático}.
+  \item \textbf{Continuidade -} o mundo é \textbf{continuo} quando a evolução do estado do
+  mundo é um processo continuo ou sem saltos; caso contrário o mundo
+  diz-se \textbf{discreto}.
+\end{itemize}
+
+\begin{flushleft}
+  \textbf{Exemplo:} Um agente táxi opera num ambiente dinâmico, enquanto que um agente que jogue palavras-cruzadas opera num
+  ambiente estático.
+  Para um agente carro de condução autónoma, a estrada é um ambiente contínuo. Já para um agente que jogue xadrez,
+  o tabuleiro é um ambiente discreto.
+\end{flushleft}
+
+\pagebreak
+
+\subsubsection{Mundo de um agente: Exemplos}
+
+\begin{center}
+  \includegraphics[scale=0.35]{16}
+\end{center}
+
+\subsection{Arquiteturas de agentes}
+
+\subsubsection{Subsunção}
+
+\begin{center}
+  \includegraphics[scale=0.35]{17}
+\end{center}
+
+Esta arquitetura procura estabelecer a ligação entre a perceção e a ação a vários níveis,
+organizados em camadas, criando agentes com comportamento simultâneamente reativo e
+deliberativo.
+
+\vspace{2mm}
+
+A camada mais baixa é a mais reativa, diminuindo a reatividade e aumentando o peso da
+componente deliberativa à medida que se sobe nas camadas. A ação do agente resulta da fusão das
+decisões das várias camadas
+
+\subsubsection{Três torres}
+
+\begin{center}
+  \includegraphics[scale=0.33]{18}
+\end{center}
+
+O processo de \textbf{tomada de decisão é simbólico} e feito a partir de um modelo,
+mas tem \textbf{algumas ações reativas}.
+
+\pagebreak
+
+\subsubsection{Três camadas}
+
+\begin{center}
+  \includegraphics[scale=0.35]{19}
+\end{center}
+
+Para além das camadas deliberativas e reativas tem uma \textbf{camada de ações intermédias},
+que é o intermediário entre as duas, produzindo uma alteração qualitativa no estado do
+mundo.
+
+\subsubsection{CARL}
+
+\begin{center}
+  \includegraphics[scale=0.35]{20}
+\end{center}
+
+Esta arquitetura (anos 2000) veio introduzir dois novos conceitos:
+
+\begin{itemize}
+  \item \textbf{Interfaces -} Facilitam a interação por pessoas não especializadas;
+  \item \textbf{Aprendizagem -} Para funcionar num ambiente humano não estruturado vai ter de aprender para se ir
+  adapatando às condições do mundo real. Está assente em \textbf{memória}.
+\end{itemize}
+
+
+
 \end{document}
