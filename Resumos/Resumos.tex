@@ -168,5 +168,177 @@ nume grande conjunção, e cada frase está universalmente quantificada. Portant
 
 \section{Programação ao estilo funcional em Python}
 
+\subsection{Python}
+
+Criada no final dos anos 90, é uma linguagem de programação interpretada,
+iterativa, portável, funcional, orientada a objetos e de implementação aberta.
+Tem como principais objetivos: simplicidade sem prejuizo da utilidade,
+programação modular, legibilidade, desenvolvimento rápido, facilidade de integração,
+nomeadamente com outras linguagens. Apresenta-se como uma linguagem \textbf{multi-paradigma}:
+\begin{itemize}
+  \item \textbf{Programação funcional:} Expressões lambda, funções de ordem superior,
+  listas com sintaxe simples, iteradores, \dots
+  \item \textbf{Programação OO:} Classes, objetos, métodos, herança, \dots
+  \item \textbf{Programação imperativa/modular:} Atribuição, sequências,
+  condicionais, ciclos, \dots
+\end{itemize}
+
+\subsubsection{Python vs Java}
+
+Comparativamente ao JAVA revela-se menos consisa porque os espaços são sintaticamente
+relevantes e o código, não compilado para código nativo (interpretado), demora mais tempo a
+executar (diferença residual), no entanto apresenta uma maior facilidade de desenvolvimento e
+legibilidade.
+
+\subsubsection{Áreas de aplicação}
+
+As principais áreas de aplicação são: interligação de sistemas, aplicações gráficas,
+aplicações para bases de dados, multimédia, internet protocol/web e
+robótica e inteligência artificial.
+
+\subsection{Dados, ou "objetos"}
+
+\begin{flushleft}
+  \textbf{Objeto:} no contexto de Pyhton, esta designação é
+  aplicada a qualquer dado que possa ser armazenado
+  numa variável, ou passado como parâmetro a uma
+  função.
+\end{flushleft}
+
+Cada objeto é caracterizado por uma identidade/referência (identifica a posição
+de memória onde está armazenado), um tipo e um valor. Alguns tipos de
+objetos podem ter atributos e métodos, outros (classes) podem ter
+sub-tipos (sub-classes).
+
+\begin{center}
+  \includegraphics[scale=0.3]{3}
+\end{center}
+
+Alguns destes são imutáveis, como as \textbf{str} e \textbf{tuple}. Para determinar o tipo de um objeto utiliza-se a função pré-definida \textbf{type()}.
+
+\pagebreak
+
+\subsection{Variáveis}
+
+As variáveis guardam objetos, mas não são declaradas (inicializadas apenas) nem têm tipos
+associados (o tipo é do objeto!). Praticamente tudo pode ser atribuido a uma variável, incluindo
+funções, módulos e classes. Similar as linguagens imperativas, e ao contrário das
+funcionais, o valor de uma variável pode ser alterado. Não se pode ler o valor de uma variável
+se este não tiver sido previamente inicializado.
+
+\subsection{Intrução de atribuição}
+
+Tal como é habitual na programação imperativa, e ao
+contrário do habitual na programação declarativa,
+Python possui instrução de atribuição.
+
+\begin{flushleft}
+  \textbf{Exemplo:}
+  \begin{lstlisting}
+    n = 10
+    a = b = c = 0
+    x = 7.25
+    cad = "cadeia"
+    t = (n, x)
+    l = [1, 2, 'quatro', 5.0]
+  \end{lstlisting}
+\end{flushleft}
+
+Pode user a operação de atribuição para decompor estruturas:
+\begin{lstlisting}
+  triplo = (1, 2, 3)
+  (i, j, k) = triplo
+\end{lstlisting}
+
+\subsection{Operadores}
+
+Operadores comuns matemáticos e lógicos. É importante saber que objetos de
+tipos diferentes nunca são iguais (exceto os diferentes tipos de números).
+
+\subsubsection{Operadores lógicos}
+
+Na conjunção e disjunção, o segundo elemento só é avaliado de for necessário para determinar
+o resultado.
+
+\begin{lstlisting}
+  if False and a: # a nao e avaliado
+    ...
+
+  if True or a: # a nao e avaliado
+    ...
+\end{lstlisting}
+
+\pagebreak
+
+\subsection{Acesso a sequências}
+
+Os elementos das sequências são acedidos
+através de índices inteiros consecutivos (primeiro elemento tem índice 0).
+
+\vspace{2mm}
+
+É possível extrair “fatias” das sequências. A indexação é circular, pelo que podemos aceder a
+índices negativos.
+
+\begin{lstlisting}
+  # [inf:sup] retorna a sequencia entre os indices inf e sup-1 (uma opia da lista)
+
+  # Para fazer uma copia integral da lista usa-se [:]
+\end{lstlisting}
+
+\begin{flushleft}
+  \textbf{Detalhe importante:}  instrução de atribuição, em vez de copiar valores, limita-se
+  a associar um dado identificador a um dado objecto. Desta forma, a atribuição
+  da variável x a uma variável y, apenas tem como resultado associar y
+  ao mesmo objecto que x já estava associada. No caso dos objetos
+  mútaveis, temos de ter cuidado:
+
+  \begin{lstlisting}
+    a = [1, 2, 3]
+    b = a
+    b[1:2] = []
+    print(a) # [1, 3]
+  \end{lstlisting}
+\end{flushleft}
+
+\subsection{Definição de funções}
+
+Funções sem return, retornam None, são também conhecidas como procedimentos. As funções podem
+ser recursivas e são objetos do tipo \textbf{function}.
+
+\vspace{2mm}
+
+Os parâmetros são passados às funções segundo um mecânismo "passagem por valor"
+("call by value"). \uline{Os parâmetros são passados por referêcia, não cópias!}. 
+
+\vspace{2mm}
+
+Se atribuirmos um novo objeto a uma variável passada por
+parâmetro, essa atribuição ocorre apenas no espaço de nomes da função (imagem à
+esquerda). Se modificarmos um objeto passado por parâmetro (por
+exemplo, apagar um elemento de uma lista), isto não altera a
+referência do objeto, e portanto vai permanecer após o
+retorno da função (imagem à direita).
+
+\begin{center}
+  \includegraphics[scale=0.3]{4}
+\end{center}
+
+O problema anterior resolve-se trabalhando sobre uma cópia local,
+no caso de uma lista l, podemos usar l[:], que dá uma cópia integral.
+
+\pagebreak
+
+Podemos passar parâmetros com valores por defeito, podendo se, na chamada,
+omitir alguns parâmetros.
+
+\begin{lstlisting}
+  def abc(arg1, arg2=True, arg3=None):
+    ...
+  # Quando so queremos passar um dos args por defeito devemos indicar o seu nome
+  abc(1, arg3=3)
+\end{lstlisting}
+
+\subsection{Funções Recursivas}
 
 \end{document}
