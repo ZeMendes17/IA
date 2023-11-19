@@ -1091,4 +1091,188 @@ da lógica de primeira ordem):
 
 \subsection{CNF e Forma Clausal}
 
+Uma fórmula na \textbf{forma normal conjuntiva} (CNF) é uma fórmula que consiste de uma
+conjunção de cláusulas.
+
+\begin{flushleft}
+  \textbf{Cláusula -} fórmula que consiste de uma
+  disjunção de literais.
+
+  \textbf{Literal -} fórmula atómica (literal positivo) ou a
+  negação de uma fórmula atómica (literal negativo). Na LP uma
+  fórmula atómica é uma proposição.
+
+  \textbf{Forma Causal -} representação de uma fórmula CNF através do conjunto
+  das respetivas cláusulas.
+\end{flushleft}
+
+\begin{flushleft}
+  \textbf{Exemplo:}
+
+  \uline{Literal} - $p$ ou $\neg p$
+
+  \uline{Claúsula} - $I1 \vee I2$ $\vee$ \dots
+
+  \uline{CNF} - c1 \& c2 \& \dots CNF
+
+  \uline{Forma Causal} - [c1, c2, \dots]
+\end{flushleft}
+
+\pagebreak
+
+\subsubsection{Conversão de uma Fórmula
+Proposicional para CNF e forma clausal}
+
+\begin{center}
+  \includegraphics[scale=0.35]{31}
+\end{center}
+
+\subsubsection{Conversão para forma clausal em
+Lógica de Primeira Ordem}
+
+\begin{center}
+  \includegraphics[scale=0.25]{32}
+  \includegraphics[scale=0.25]{33}
+
+  \vspace{2mm}
+  
+  \includegraphics[scale=0.3]{34}
+\end{center}
+
+\pagebreak
+
+\subsection{Lógica - Regras de Inferência}
+
+\begin{center}
+  \includegraphics[scale=0.35]{35}
+\end{center}
+
+\subsubsection{LPO - Regras de Inferência específicas}
+
+\begin{center}
+  \includegraphics[scale=0.3]{36}
+\end{center}
+
+\subsection{Consequências lógicas e provas}
+
+A regras de inferência permitem-nos obter consequências lógicas (A) a partir de um conjunto
+de fórmulas ( $\Delta$ = { A1, \dots, An }), representada esta noção por $\vDash$.
+
+\[ \Delta \vDash A \]
+
+Esta consequência é obtida se A tomar o valor verdadeiro em \textbf{todas as interpretações} para as
+quais cada uma das fórmulas em $\Delta$ toma também o valor \textbf{verdadeiro}.
+
+\vspace{2mm}
+
+A \textbf{prova} de uma fórmula $A_n$ é dada pela sequência de fórmulas $\Delta = \{ A_1, \dots, A_n \}$ tal que cada $A_i$
+pode ser inferida a partir das fórmulas anteriores $A_1, \dots, A_{i-1}$. Neste caso, escreve-se:
+
+\[ \Delta \vdash A_n \]
+
+\pagebreak
+
+\subsection{Correção, Completude}
+
+\begin{flushleft}
+  \textbf{Correção -} Diz-se que um conjunto de regras de
+  inferência é correto se \textbf{todas as fórmulas que gera são
+  consequências lógicas}.
+
+  \vspace{2mm}
+
+  \textbf{Completude -} Diz-se que um conjunto de regras de
+  inferência é completo se \textbf{permite gerar todas as
+  consequências lógicas}.
+\end{flushleft}
+
+Um sistema de inferência correto e completo permite tirar consequências lógicas sem ter que analisar caso a
+caso as várias interpretações.
+
+\subsection{Metateoremas}
+
+\vspace{2mm}
+
+\begin{center}
+  \includegraphics[scale=0.3]{37}
+\end{center}
+
+\subsection{Resolução não é Completa}
+
+A resolução é uma regra de inferência correta
+(gera fórmulas necessáriamente verdadeiras)
+
+\[ \{ A \wedge B, \neg B \wedge C \} \vdash A \wedge C \]
+
+A resolução não é completa. Exemplo, a resolução não consegue derivar a
+seguinte consequência lógica:
+
+\[ \{ A \vee B \} \vDash A \wedge B \]
+
+\subsection{Refutação por Resolução}
+
+Este é um \textbf{mecanismo de inferência completo}, usa-se a resolução para provar que a negação da
+consequência lógica é inconsistente com a premissa (metateorema da redução ao absurdo). Para tal,
+basta derivar Falso.
+
+No exemplo dado, prova-se que $(A \wedge B) \wedge \neg (A \vee B)$ é inconsistente
+(basta mostrar que é possível derivar a fórmula "Falso").
+
+\subsubsection{Passos}
+
+\begin{itemize}
+  \item Converter a premissa e a negação da consequência lógica
+  para um conjunto de cláusulas.
+  \item Aplicar a resolução até obter a cláusula vazia.
+\end{itemize}
+
+\pagebreak
+
+\subsubsection{Substituições, Unificação}
+
+\begin{center}
+  \includegraphics[scale=0.3]{38}
+\end{center}
+
+\subsubsection{Resolução e Refutação
+na Lógica de Primeira Ordem}
+
+\begin{center}
+  \includegraphics[scale=0.3]{39}
+\end{center}
+
+\subsection{Resolução com Claúsulas de Horn}
+
+A \textbf{refutação por resolução} é correta e completa, mas apesar de melhor que avaliar todas as
+interpretações da inferência, continua a ser pouco eficiente.
+
+\begin{flushleft}
+  \textbf{Nota:} Para várias cláusulas com muitos literais em cada uma vão haver múltiplos casos em que a resolução pode ser
+  aplicada entre um literal e outros de outras formulas, o que vai gerar uma explosão de casos e um problema
+  tendencialmente mais difícil de resolver com o aumento do seu tamanho.
+\end{flushleft}
+
+Uma cláusula de Horn é uma cláusula que tem
+no máximo um literal positivo, como: $A$, $\neg A \vee B$, $\neg A \vee B \vee \neg C$ e
+$\neg A \vee \neg B$.
+
+Existem algoritmos de dedução baseados em
+cláusulas de Horn cuja complexidade temporal
+é linear.
+
+\begin{flushleft}
+  \textbf{Exemplo:} $\neg A \vee B \vee \neg C$ (=) $A \wedge C \rightarrow B$
+\end{flushleft}
+
+\begin{flushleft}
+  \textbf{Nota:} O problema da combinatória da refutação por resolução vai ser minimizado, uma vez nas cláusulas de Horn cada
+  cláusula vai ter menos possibilidades de resolução. O seu literal positivo pode ser resolvido com um negativo noutra
+  fórmula e o inverso para os seus literais negativos.
+\end{flushleft}
+
+Estas cláusulas permitem a aplicação de algoritmos com \uline{complexidade temporal linear}.
+
+\section{Representação do conhecimento}
+
+
 \end{document}
