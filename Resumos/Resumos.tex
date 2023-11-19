@@ -846,6 +846,249 @@ Esta arquitetura (anos 2000) veio introduzir dois novos conceitos:
   adapatando às condições do mundo real. Está assente em \textbf{memória}.
 \end{itemize}
 
+\section{Representação do conhecimento}
 
+Para poderem tomar decisões, os agentes (especialmente os deliberativos) precisam de ter
+algum conhecimento sobre o mundo em que se inserem.
+
+\subsection{Redes Semânticas}
+
+As \textbf{redes semânticas} são representações gráficas do conhecimento que facilitam a legibilidade
+As redes semânticas podem ser tão expressivas quanto
+a lógica de primeira ordem
+
+\pagebreak
+
+\subsubsection{Tipos de Relções}
+
+\begin{itemize}
+  \item Sub-tipo (ou sub-conjunto ou ainda sub-classe): $A \subset B$
+  \item Membro (ou instância) de: $A \in B$
+  \item Relação objeto-objeto: $R(A, B)$
+  \item Relação conjunto-objeto: $\forall x x \in A \rightarrow R(x, B)$
+  \item Relação conjunto-conjunto: $\forall x x \in A \rightarrow \exists (y \in B \wedge R(x, y))$
+\end{itemize}
+
+\subsubsection{Exemplo}
+
+\begin{center}
+  \includegraphics[scale=0.35]{21}
+\end{center}
+
+\subsubsection{Herança}
+
+A herança pode ser representada em relações de \textbf{sub-tipo}, herdando todas as propriedades
+dos tipos mais abstratos dos quais descende, ou de \textbf{instância}, herdando as todas as
+propriedades do tipo a que pertence.
+Aplica-se um \textbf{raciocínio não monotónico} devido ao estabelecimento dos \textbf{valores por defeito},
+propriedades comuns a todos os membros desse tipo e do \textbf{cancelamento de herança}, que
+ocorre quando um sub-tipo altera um valor por defeito herdado de um tipo do qual descende.
+
+\subsubsection{Métodos e Demónios}
+
+Normalmente, por razões computacionais, usam-se redes
+semânticas bastante menos expressivas do que a lógica de primeira
+ordem, deixando-se de lado a \textbf{negação}, a \textbf{disjunção} e a \textbf{quantificação}.
+
+Em contra-partida, nomeadamente nos chamados sistemas de
+frames, usam-se métodos e demónios:
+\begin{itemize}
+  \item \textbf{Métodos} - têm uma semântica similar à da programação orientada por objectos.
+  \item \textbf{Demónios} - são procedimentos cuja execução é disparada automáticamente
+  quando certas operações de leitura ou escrita são efetuadas.
+\end{itemize}
+
+\pagebreak
+
+\subsection{UML / Diagramas de Classes}
+
+Na linguagem gráfica UML (Unified Modelling Language), os
+diagramas de classes definem as \uline{relações existentes entre as
+diferentes classes} de objetos num dado domínio.
+\begin{itemize}
+  \item \textbf{Classe} - Descrição de um conjunto de objetos que partilham os mesmos
+  atributos, operações, relações e semântica; estes objetos podem ser físicos
+  ou conceituais.
+  \item \textbf{Atributo} - Uma propriedade de uma classe.
+  \item \textbf{Operação (ou método)} - implementação de um serviço.
+  \item \textbf{Instância} - Um objeto que pertence a uma classe.
+\end{itemize}
+
+\begin{center}
+  \includegraphics[scale=0.35]{22}
+\end{center}
+
+\begin{center}
+  \includegraphics[scale=0.35]{23}
+  \includegraphics[scale=0.35]{24}
+\end{center}
+
+\subsection{Redes semânticas vs UML}
+
+\begin{center}
+  \includegraphics[scale=0.3]{25}
+\end{center}
+
+\pagebreak
+
+\subsection{Indução versus Dedução}
+
+A \textbf{dedução} permite a partir de um conjunto de permissas consideradas verdadeiras, por
+mecanismos de inferências lógica, tirar conlusões verdadeiras.
+
+No entanto, para adquirir conhecimento novo é necessário haver \textbf{indução}, ou seja, a
+capacidade de inferir regras gerais a partir de observações concretas.
+
+A dedução permite inferir casos particulares a partir de regras gerais, enquanto que
+a indução permite inferir regras gerais a partir de casos particulares.
+
+\subsubsection{Exemplo de Indução}
+
+\begin{flushleft}
+  Casos conhecidos:
+  \begin{itemize}
+    \item O gato Tareco gosta de leite;
+    \item O gato Ozzy gosta de leite;
+  \end{itemize}
+
+  \uline{Regra inferida}: Os gatos (normalmente) gostam de leite.
+
+  Nas redes semânticas, a indução pode ser vista como uma "herança de baixo para cima".
+\end{flushleft}
+
+\subsection{Lógicas}
+
+Uma lógica tem:
+\begin{itemize}
+  \item \textbf{Sintaxe} - descreve o conjunto de frases ou fórmulas que é possível
+  escrever (WFF - Well Formed Formulas);
+  \item \textbf{Semântica} - estabelece a relação entre as frases escritas nessa
+  linguagem e os factos que representam;
+  \item \textbf{Regras de Inferência} - permitem manipular as frases, gerando
+  umas a partir das outras; as regras de inferência são a base do
+  processo de raciocínio.
+\end{itemize}
+
+\subsubsection{Lógica Proposicional}
+
+A \textbf{lógica proposicional} é baseada em proposições, frases declarativas que podem ser
+\textbf{verdadeiras ou falsas}, que podem ser representadas por \uline{variáveis proposicionais} que tomam o
+seu valor de verdade. As fórmulas são compostas por uma ou mais variáveis proposicionais
+ligadas por \uline{conectivas lógicas}.
+
+\vspace{2mm}
+
+\begin{flushleft}
+  \textbf{Exemplo:} As proposições não dependem da interpretação, uma vez que, contrariamente aos predicados, as proposições não
+  têm argumentos. "A neve é branca.” é uma proposição, que é verdadeira.
+\end{flushleft}
+
+\pagebreak
+
+\subsubsection{Lógica de Primeira Ordem}
+
+Em contraste temos a \textbf{lógica de primeira ordem}, onde há uma distinção entre os objetos e as
+relações (predicados).
+
+Além de variáveis, usadas para representar termos não especificados e constantes escalares,
+os objetos podem ainda tomar a forma de \uline{expressões funcionais}, que se formam pela
+aplicação de uma função aos seus argumentos. Os objetos podem ser considerados como
+expressões funcionais cujo núemro de argumentos é zero.
+
+O \uline{nome da relação aplica-se sempre ao seu primeiro elemento} (argumento). Os seus
+argumentos só podem ser termos (nunca relação de relação).
+
+\begin{flushleft}
+  \textbf{Exemplo:} Potencia(4, 3) é uma \textbf{expressão funcional}.
+
+  Pai(Rui, João) é um \textbf{predicado}. 
+\end{flushleft}
+
+\subsection{Conectivas Lógicas (LP, LPO)}
+
+Comuns às duas lógicas abordadas, servem para \uline{combinar frases lógicas elementares} por
+forma a obter frases mais complexas.
+
+\begin{itemize}
+  \item \textbf{Conjunção} - $p \wedge q$
+  \item \textbf{Disjunção} - $p \vee q$
+  \item \textbf{Implicação} - $p \rightarrow q$
+  \item \textbf{Negação} - $\neg p$
+\end{itemize}
+
+\subsection{Variáveis, Quantificadores (LPO)}
+
+Para quantificar as variáveis da lógica de primeira ordem temos os quantificadores universais e
+os quantificadores existenciais.
+
+\begin{itemize}
+  \item \textbf{Quantificador universal} - $\forall x$.
+  \begin{itemize}
+    \item $\forall x A \equiv$ "Qualquer que seja x, a fórmula A é verdadeira"
+  \end{itemize}
+  \item \textbf{Quantificador existencial} - $\exists x$
+  \begin{itemize}
+    \item $\exists x A \equiv$ "Existe um x, para o qual a fórmula A é verdadeira"
+  \end{itemize}
+\end{itemize}
+
+Se A é uma fórmula bem formada (FBF), então a sua quantificação também é uma FBF.
+
+\pagebreak
+
+\subsection{Gramáticas (LPO)}
+
+\begin{center}
+  \includegraphics[scale=0.35]{26}
+\end{center}
+
+\subsubsection{Exemplo}
+
+\begin{center}
+  \includegraphics[scale=0.35]{27}
+\end{center}
+
+\subsection{Interpretações em Lógica Proposicional}
+
+Na lógica proposicional, a interpretação de uma fórmula é a atribuição de valores de verdade
+ou falsidade às várias proposições que nela ocorrem. \textbf{$A \wedge B$}  tem quatro interpretações possíveis que resultam da combinação dos valores de verdade e
+falsidade de A e B.
+
+\begin{itemize}
+  \item \textbf{Satisfatibilidade} - Uma interpretação satisfaz uma fórmula
+  sse a fórmula toma o valor "verdadeiro" para essa
+  interpretação.
+  \item \textbf{Modelo de uma fórmula} - uma interpretação que satisfaz
+  essa fórmula.
+  \item \textbf{Tautologia} - uma fórmula cujo valor é "verdadeiro" em
+  qualquer interpretação. 
+\end{itemize}
+
+\pagebreak
+
+\subsection{Interpretações em Lógica de Primeira Ordem}
+
+Na \textbf{lógica de primeira ordem}, a interpretação de uma fórmula é o estabelecimento de uma
+correspondência entre as constantes que ocorrem na fórmula e os objetos do mundo, funções e
+relações que essas contantes representam.
+
+\subsection{Regras de Substituição}
+
+Estas regras permitem substituir uma fórmula por outra equivalente.
+São válidas tanto para a lógica proposicional como para a lógica de primeira ordem.
+
+\begin{center}
+  \includegraphics[scale=0.35]{28}
+  \includegraphics[scale=0.35]{29}
+\end{center}
+
+Leis de DeMorgan generalizadas (estas são específicas
+da lógica de primeira ordem):
+
+\begin{center}
+  \includegraphics[scale=0.35]{30}
+\end{center}
+
+\subsection{CNF e Forma Clausal}
 
 \end{document}

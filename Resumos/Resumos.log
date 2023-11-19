@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.14)  18 NOV 2023 19:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.14)  19 NOV 2023 03:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -430,22 +430,106 @@ Package pdftex.def Info: ./Images//20.png  used on input line 838.
 (pdftex.def)             Requested size: 247.3277pt x 114.52959pt.
 File: UA.jpg Graphic file (type jpg)
 <use UA.jpg>
-Package pdftex.def Info: UA.jpg  used on input line 851.
+Package pdftex.def Info: UA.jpg  used on input line 861.
 (pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
- [17 <./Images//19.png> <./Images//20.png>] (./Resumos.aux) ) 
+ [17 <./Images//19.png> <./Images//20.png>]
+<./Images//21.png, id=112, 590.205pt x 395.4775pt>
+File: ./Images//21.png Graphic file (type png)
+<use ./Images//21.png>
+Package pdftex.def Info: ./Images//21.png  used on input line 875.
+(pdftex.def)             Requested size: 206.57484pt x 138.41919pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 902.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [18 <./Images//21.png>]
+Overfull \hbox (3.48561pt too wide) in paragraph at lines 909--912
+[]\OT1/cmr/bx/n/10 Classe \OT1/cmr/m/n/10 - De-scri^^Xc~ao de um con-junto de ob-je-tos que par-til-ham os mes-mos atrib-u-tos, opera^^Xc~oes,
+ []
+
+<./Images//22.png, id=118, 751.80875pt x 336.25626pt>
+File: ./Images//22.png Graphic file (type png)
+<use ./Images//22.png>
+Package pdftex.def Info: ./Images//22.png  used on input line 918.
+(pdftex.def)             Requested size: 263.137pt x 117.69145pt.
+<./Images//23.png, id=119, 606.265pt x 293.095pt>
+File: ./Images//23.png Graphic file (type png)
+<use ./Images//23.png>
+Package pdftex.def Info: ./Images//23.png  used on input line 922.
+(pdftex.def)             Requested size: 212.19592pt x 102.58478pt.
+<./Images//24.png, id=120, 532.99126pt x 300.12125pt>
+File: ./Images//24.png Graphic file (type png)
+<use ./Images//24.png>
+Package pdftex.def Info: ./Images//24.png  used on input line 923.
+(pdftex.def)             Requested size: 186.54973pt x 105.044pt.
+<./Images//25.png, id=121, 803.0pt x 492.84125pt>
+File: ./Images//25.png Graphic file (type png)
+<use ./Images//25.png>
+Package pdftex.def Info: ./Images//25.png  used on input line 929.
+(pdftex.def)             Requested size: 240.90186pt x 147.8535pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 933.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+[19 <./Images//22.png> <./Images//23.png> <./Images//24.png> <./Images//25.png>]
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 987.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [20]
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 1038.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [21]
+<./Images//26.png, id=135, 759.83875pt x 463.7325pt>
+File: ./Images//26.png Graphic file (type png)
+<use ./Images//26.png>
+Package pdftex.def Info: ./Images//26.png  used on input line 1042.
+(pdftex.def)             Requested size: 265.94754pt x 162.30879pt.
+<./Images//27.png, id=136, 704.6325pt x 497.86pt>
+File: ./Images//27.png Graphic file (type png)
+<use ./Images//27.png>
+Package pdftex.def Info: ./Images//27.png  used on input line 1048.
+(pdftex.def)             Requested size: 246.62508pt x 174.2536pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 1068.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [22 <./Images//26.png> <./Images//27.png>]
+<./Images//28.png, id=142, 348.30125pt x 363.3575pt>
+File: ./Images//28.png Graphic file (type png)
+<use ./Images//28.png>
+Package pdftex.def Info: ./Images//28.png  used on input line 1081.
+(pdftex.def)             Requested size: 121.90726pt x 127.17702pt.
+<./Images//29.png, id=143, 513.92pt x 366.36874pt>
+File: ./Images//29.png Graphic file (type png)
+<use ./Images//29.png>
+Package pdftex.def Info: ./Images//29.png  used on input line 1082.
+(pdftex.def)             Requested size: 179.87468pt x 128.23097pt.
+<./Images//30.png, id=144, 310.15875pt x 83.31125pt>
+File: ./Images//30.png Graphic file (type png)
+<use ./Images//30.png>
+Package pdftex.def Info: ./Images//30.png  used on input line 1089.
+(pdftex.def)             Requested size: 108.55717pt x 29.15936pt.
+File: UA.jpg Graphic file (type jpg)
+<use UA.jpg>
+Package pdftex.def Info: UA.jpg  used on input line 1094.
+(pdftex.def)             Requested size: 9.02876pt x 9.02876pt.
+ [23 <./Images//28.png> <./Images//29.png> <./Images//30.png>] (./Resumos.aux) ) 
 Here is how much of TeX's memory you used:
- 5750 strings out of 480247
- 83298 string characters out of 5896150
+ 5860 strings out of 480247
+ 85188 string characters out of 5896150
  611917 words of memory out of 5000000
- 23631 multiletter control sequences out of 15000+600000
+ 23741 multiletter control sequences out of 15000+600000
  478029 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,15n,62p,244b,1251s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,15n,62p,246b,1251s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/mendes/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on Resumos.pdf (18 pages, 594232 bytes).
+Output written on Resumos.pdf (24 pages, 896716 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 190 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
