@@ -12,6 +12,7 @@
 \usepackage{amssymb}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{amsmath}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -1272,7 +1273,275 @@ cláusulas de Horn cuja complexidade temporal
 
 Estas cláusulas permitem a aplicação de algoritmos com \uline{complexidade temporal linear}.
 
+\pagebreak
+
 \section{Representação do conhecimento}
+
+\subsection{Linguagem KIF (Knowledge Interchange Format)}
+
+É uma linguagem desenhada para representar o conhecimento trocado entre agentes.
+Além disso, pode ser usada para representar os modelos internos de cada agente.
+As caraterísticas principais são: a \textbf{semântica puramente declarativa},
+\textbf{tão ou mais expressiva que a LPO} e \textbf{permite a representação
+de meta-conhecimento}.
+
+\subsubsection{Características gerais}
+
+O mundo é concetualizado em termos de objetos e relações entre objetos
+(conjunto arbitrário de listas de objetos, como por exemplo
+a relação $<$ é o conjunto de todos os pares (x, y) em que $x < y$).
+
+\vspace{2mm}
+
+O universo de discurso é o conjunto de todos os objetos cuja existência
+é conhecida, presumida ou suposta. Os objetos podem ser \textbf{concretos} ou \textbf{abstratos},
+podem ser \textbf{primitivos} (não decomponíveis) ou \textbf{compostos}.
+
+\subsubsection{Componentes da linguagem}
+
+\begin{itemize}
+  \item \textbf{Caracteres}
+  \item \textbf{Lexemas}: especiais (papel pré-definidos na linguagem), palavras,
+  código de caracteres, blocos de código de caracteres, cadeias de caracteres
+  \item \textbf{Expressões}:
+  \begin{itemize}
+    \item \textbf{Termos -} objetos primitivos ou compostos
+    \item \textbf{Frases -} expressões com valor lógico
+    \item \textbf{Definições -} frases verdadeiras por definição
+  \end{itemize}
+\end{itemize}
+
+\subsubsection*{Termos}
+
+Constantes, variáveis individuais, expressões funcionais, listas, termos lógicos, caracteres e citações.
+
+\vspace{2mm}
+
+Uma \textbf{expressão funcional} pode ser uma função ou uma estrutura de dados, ambas representadas por
+functor arg1..n.
+
+As \textbf{listas} são uma expressão funcional, com functor listof:
+listof arg1 \dots argn.
+
+Os \textbf{termos lógicos}: if c1 t1 \dots cn tn default
+
+As \textbf{citações} podem ser feitas com
+(quote TERMO) ou
+'TERMO.
+
+\subsubsection*{Frases}
+
+Constantes true ou false, (in)equações (comparação), frases relacional (predicados), lógica e quantificada.
+
+\textbf{Frases relacionais}:
+(relação t1 \dots tn)
+
+\textbf{Frases lógicas}:
+(not/and/or/</>/\dots t1 \dots tn)
+
+\textbf{Frases quantificadas}:
+(forall/exists var1 \dots varn frase)
+
+\pagebreak
+
+\subsubsection*{Definições}
+
+Objetos, funções e relações (predicados).
+
+\begin{center}
+  \includegraphics[scale=0.35]{40}
+\end{center}
+
+\subsubsection{Meta-conhecimento}
+
+O \textbf{meta-conhecimento} formaliza \uline{conhecimento sobre o conhecimento}. Para isto, recorre-se ao
+mecanismo da citação que \uline{permite tratar expressões como objetos}, fazendo referência à sua
+representação em vez do seu significado (por exemplo  ocorrência da palavra joão numa expressão designará
+uma pessoa; entretanto a expressão (quote joão) ou 'joão designa a
+própria palavra joão e não o objeto ou pessoa a que ela se refere).
+Podemos ilustrar da seguinte forma:
+
+\begin{center}
+  \includegraphics[scale=0.35]{41}
+\end{center}
+
+\subsubsection{Dimensões de conformação}
+
+O facto de ser uma linguagem \textbf{altamente expressiva} leva a que o KIF tenda a \textbf{sobrecarregar os
+sistemas de geração de inferência}, pelo que foi necessário definir várias dimensões de
+conformação, havendo para cada uma um \uline{perfil de conformação}, que consiste numa seleção
+de níveis de conformação.
+
+\subsubsection{Perfis de conformação}
+
+\begin{center}
+  \includegraphics[scale=0.4]{42}
+\end{center}
+
+\pagebreak
+
+\subsection{Engenharia do Conhecimento}
+
+A \textbf{base de conhecimento (BC)} é um conjunto de declarações que existem sobre aspetos de um certo
+domínio, que podem ser factos e regras do funcionamento, designadas genericamente por
+\uline{frases}.
+
+\begin{flushleft}
+  \textbf{Nota:} Com base na automizatização e simplificação do conhecimento estudadas anteriormente, as \textbf{regras} serão \uline{cláusulas de
+  Horn} e os \textbf{factos} \uline{cláusulas sem literais negativos}.
+
+  "Sócrates é um homem" é um facto, enquanto que "Todos os homens são mortais" é uma regra.
+
+  Cláusula de Horn porque Homem $\rightarrow$ Mortal que pode se representada por $\neg Homem \vee Mortal$.
+\end{flushleft}
+
+A \textbf{engenharia do conhecimento}, por sua vez, é o processo de \textbf{preparar uma representação para
+uma determinada aplicação}, construindo para este fim \uline{bases de conhecimento}. Não é mais do
+que a \uline{modelação de um sistema}, que resulta numa base de dados que para além de factos
+tem também regras. Consiste nos seguintes passos:
+
+\begin{center}
+  \includegraphics[scale=0.4]{43}
+\end{center}
+
+\subsubsection{Identificação de objetos,
+conceitos e relações}
+
+Na modelação em análise de sistemas e engenharia de software
+coloca-se o mesmo problema, assim para um problema complexo de representação do conhecimento,
+não é descabido seguir uma metodologia de análise em boa parte similar
+às que se usam nos sistemas de informação.
+
+\vspace{2mm}
+
+Algumas das \textbf{palavras que usamos para descrever um domínio} em
+linguagem natural dão naturalmente \textbf{origem a nomes de objetos,
+conceitos e relações}.
+
+\begin{center}
+  \includegraphics[scale=0.4]{44}
+\end{center}
+
+Convém avaliar a importância para o problema das palavras utilizadas
+bem como dos objetos, conceitos e relações subjacentes, ou seja:
+\begin{itemize}
+  \item Não considerar substantivos que identifiquem objetos, conceitos ou
+  relações irrelevantes para o problema
+  \item Quando vários substantivos aparecem a referir-se ao mesmo conceito,
+  escolher o mais representativo ou adequado
+\end{itemize}
+
+\pagebreak
+
+Um conceito mais abstrato pode ser criado atribuindo-lhe o que
+é comum a outros dois ou mais conceitos previamente
+identificados.
+
+\subsubsection{Ontologias}
+
+Uma \textbf{ontologia} é um \uline{vocabulário sobre um domínio}
+conjugado com relações hierárquicas como \uline{membro} e
+\uline{subtipo} e eventualmente outras.
+
+O objetivo de uma ontologia é captar a essência da organização do conhecimento
+num domínio.
+
+\subsubsection{Ontologia Geral}
+
+Uma ontologia geral, aplicável a uma grande variedade
+de domínios de aplicação, envolve as seguintes noções:
+
+\begin{center}
+  \includegraphics[scale=0.35]{45}
+\end{center}
+
+\subsubsection*{Possível Ontologia Geral}
+
+\begin{center}
+  \includegraphics[scale=0.4]{46}
+\end{center}
+
+\pagebreak
+
+\subsection{Redes de Bayes}
+
+\subsubsection{Redes de crença bayesianas}
+
+Aka "Redes de Bayes" permitem representar o \textbf{conhecimento impreciso}
+em termos de um conjunto de variáveis aleatórias e respetivas
+dependências. As dependências são expressas através de
+probabilidades condicionadas, sendo a rede um grafo dirigido acíclico.
+
+\subsubsection{Axiomas das probabilidades}
+
+\begin{center}
+  \includegraphics[scale=0.35]{47}
+\end{center}
+
+\subsubsection{Probabilidades condicionadas}
+
+Uma probabilidade condicionada, $P(A|B)$, identifica a probabilidade de ser
+verdadeira a proposição $A$ na condição de (isto é, sabendo nós que)
+a proposição $B$ é verdadeira. Pode calcular-se da seguinte forma:
+
+\[ P(A|B) = \frac{P(A \wedge B)}{P(B)} \]
+
+\subsubsection{Exemplo}
+
+Por simplicidade, vamos focar em variáveis booleanas.
+
+\begin{center}
+  \includegraphics[scale=0.4]{48}
+\end{center}
+
+\pagebreak
+
+\subsubsection{Redes de crença bayesianas - probabilidade conjunta}
+
+A probabilidade conjunta identifica a probabilidade de ocorrer uma dada
+combinação de valores de todas as variáveis da rede:
+
+\[ P(x_1 \wedge \dots \wedge x_n) = \prod_{i=1}^{n} P(x_i | pais(x_i)) \]
+
+Assim, no exemplo anterior, a probabilidade de o alarme tocar e o João e a
+Maria ambos avisarem num cenário em que não há roubo nem terramoto, é
+dada por:
+
+\[ P(j \wedge m \wedge a | \neg t \wedge \neg r) = P(j | a) \times P(m | a) \times P(a | \neg r \wedge \neg t) \times P(\neg r) \times P(\neg t) \]
+\[ = 0.9 \times 0.7 \times 0.01 \times 0.99 \times 0.99 = 0.006272 \]
+
+\subsubsection{Redes de crença bayesianas - probabilidade individual}
+
+A \textbf{probabilidade individual} é a probabilidade de um
+valor específico (verdadeiro ou falso) de uma variável.
+Calcula-se somando as probabilidades conjuntas das
+situações em que essa variável tem esse valor específico.
+
+O cálculo das probabilidades conjuntas pode restringir-se à variável considerada e às outras variáveis das quais
+depende (ascendentes na rede bayesiana).
+
+\vspace{2mm}
+
+\begin{flushleft}
+  \textbf{Exemplo:} o conjunto dos ascendentes de "João avisa"
+  é \{ "alarme", "roubo" e "terramoto" \}.
+\end{flushleft}
+
+\[ P(x_i = v_i) = \sum_{\substack{a_j \in \{v,f\}\\ j=1,\dots,k}} P(x_1 \wedge a_1 \wedge \dots \wedge a_k) \]
+
+Seja:
+\begin{itemize}
+  \item $C = \{ x_1, \dots, x_n \}$ o conjunto de variáveis da rede;
+  \item $x_i \in C$ qualquer variável da rede;
+  \item $v_i \in \{v, f\}$ valor de $x_i$ cuja probabilidade se pretende calcular;
+  \item $\{a_1, \dots, a_k\} \subset C$ conjunto de variáveis da rede que são ascendentes de $x_i$. 
+\end{itemize}
+
+
+
+
+
+
 
 
 \end{document}
