@@ -1537,11 +1537,384 @@ Seja:
   \item $\{a_1, \dots, a_k\} \subset C$ conjunto de variáveis da rede que são ascendentes de $x_i$. 
 \end{itemize}
 
+\pagebreak
 
+\section{Resolução automática de problemas}
 
+Um \textbf{problema} define-se como um objetivo cuja \uline{solução não é imediata}, pelo que \uline{requer a
+pesquisa} de uma solução (Exemplo: Dado um mapa, determinar o melhor caminho entre dois pontos,
+ou, Dada uma situação num jogo de xadrez, determinar uma boa
+jogada).
 
+A sua \textbf{formulação} inclui a descrição de um ponto de partida, um conjunto de transições entre
+estados, uma função que diz se um estado satisfaz um objetivo e por vezes ainda uma função
+para avaliar o custo de uma solução.
 
+A \textbf{pesquisa} é o processo que de forma recursiva ou iterativa, executa transições sucessivas
+entre estados até atingir um que satisfaça o objetivo.
 
+\subsection{Aplicação: determinar
+um percurso num mapa
+topológico}
+
+\begin{flushleft}
+  \textbf{Dados:} Distâncias por estrada entre cidades
+  vizinhas.
+
+  \vspace{2mm}
+
+  \textbf{Exemplo:} Determinar um caminho de
+  Santarém para a Viseu.
+\end{flushleft}
+
+\begin{center}
+  \includegraphics[scale=0.35]{49}
+  \includegraphics[scale=0.35]{50}
+\end{center}
+
+\pagebreak
+
+\subsection{Pesquisa em árvore}
+
+Ao longo da pesquisa entre o estado inicial e o objetivo, as transições sucessivas entre estados
+estudadas vão originar ramificações que formam uma árvore.
+
+\subsubsection{Algoritmo Genérico}
+
+\begin{center}
+  \includegraphics[scale=0.35]{51}
+\end{center}
+
+\subsubsection{Percursos na árvore de pesquisa}
+
+\begin{center}
+  \includegraphics[scale=0.35]{52}
+\end{center}
+
+\subsubsection{Implementação baseada em fila}
+
+Em programação, a árvore pode ser implementada através de um fila, inicializada com o estado
+inicial e à qual são acrescentados os estados expandidos de acordo com a estratégia definida.
+A forma como a estratégia é definida distingue os vários métodos de pesquisa.
+
+\begin{center}
+  \includegraphics[scale=0.33]{53}
+\end{center}
+
+\pagebreak
+
+\subsubsection{Pesquisa em Profundidade}
+
+Nesta pesquisa não informada, a partir do nó raiz, \textbf{cada um dos seus ramos é explorado ao
+máximo}, antes de retroceder. Implementado através de método que adiciona nós à cabeça da lista (LIFO).
+
+\vspace{2mm}
+
+Podem ser implementadas pequenas variações, como \textbf{sem repetição de estados}, de forma a
+prevenir ciclos infinitos, convém garantir que os estados já visitados no caminho, não são novamente gerados, \textbf{com limite} de visitas em profundidade, ou \textbf{com limite crescente}, que
+consiste em resolver o problema para um limite e caso não seja encontrada solução aumentar
+esse limite (e assim sucessivamente).
+
+\subsection{Pesquisa Informada (melhor primeiro)}
+
+\begin{center}
+  \includegraphics[scale=0.35]{54}
+\end{center}
+
+\subsection{Avaliação de estratégias de pesquisa}
+
+\begin{flushleft}
+  \textbf{Completude} - uma estratégia é completa se é capaz de
+  encontrar uma solução quando existe uma solução.
+
+  \vspace{2mm}
+
+  \textbf{Complexidade temporal} - quanto tempo demora a
+  encontrar a solução.
+
+  \vspace{2mm}
+
+  \textbf{Complexidade espacial} - quanto espaço de memória é
+  necessário para encontrar uma solução.
+
+  \vspace{2mm}
+
+  \textbf{Otemalidade} -  primeira solução que a estratégia de
+  pesquisa consegue encontrar é a melhor solução.
+\end{flushleft}
+
+\subsection{Pesquisa A*}
+
+Esta é uma pesquisa informada com uma função de avaliação bem definida que \textbf{dá primazia à
+exploração dos nós com melhor custo da raiz até ao objetivo} em detrimento dos restantes.
+
+\vspace{2mm}
+
+$f(n) = g(n) + h(n)$ Com $g(n)$ a dar o custo desde o nó inicial até ao atual
+e $h(n)$ a dar o custo estimado até ao objetivo.
+
+\vspace{2mm}
+
+A função heurística $h(n)$ diz-se \textbf{admissível} se nunca
+sobrestima o custo real de chegar a uma solução a
+partir de n. Se for possível garantir que esta função é admissível, então
+a pesquisa A* encontra sempre (um)a solução ótima.
+A pesquisa A* é também completa.
+
+\pagebreak
+
+\subsubsection{Variantes}
+
+\subsubsection*{Pesquisa de custo uniforme}
+
+Esta é uma variante da pesquisa A*, também conhecida por algoritmo de Dijkstra, onde a
+função de avaliação dá primazia aos nós com base no custo desde o nó inicial. Tem
+o comportamento parecido com o da \textbf{pesquisa em largura}, e caso a exista a solução,
+a primeira solução encontrada é ótima.
+
+\vspace{2mm}
+
+$f(n) = g(n) + 0$, com $g(n)$ a dar o custo desde o nó inicial até ao atual.
+
+\subsubsection*{Pesquisa gulosa}
+
+Este método foca-se na proximidade ao objetivo.
+Tem um comportamento semelhante à \textbf{pesquisa em profundidade}, com a variante de que
+chega mais rápido à solução. Ao ignorar o custo acumulado, facilmente deixa escapar a solução ótima.
+
+\vspace{2mm}
+
+$f(n) = h(n)$, com $h(n)$ a dar o custo estimado até ao objetivo.
+
+\subsection{Pesquisa num grafo de estados}
+
+Numa pesquisa em árvore muito simplificada e em profundidade, facilmente se criam ciclos
+infinitos por repetição de estados em cada caminho estudado. Este problema pode ser
+resolvido com o registo dos estados estudados em cada caminho.
+
+No entanto, não previne que transições a partir de diferentes estados levem ao mesmo estado.
+A \textbf{pesquisa num grafo de estados} tem como objetivo evitar este acontecimento de forma a
+tornar a pesquisa mais eficiente.
+
+Assim, para além de implementar uma fila de nós abertos (não expandidos,
+em cada iteração, o primeiro nó em ABERTOS é selecionado para expansão), guarda também
+uma \textbf{lista de nós fechados} (já expandidos), para evitar a repetição de estados.
+
+A sua implementação é semelhante ao da pesquisa em árvore, distinguindo-se apenas em
+algumas etapas.
+
+\subsubsection{Algoritmo}
+
+\begin{center}
+  \includegraphics[scale=0.38]{55}
+\end{center}
+
+\pagebreak
+
+Tal como a pesquisa em árvore, a \textbf{pesquisa em grafo} utiliza
+árvore de pesquisa. No entanto, a pesquisa em árvore normal ignora a
+possibilidade de o espaço de estados ser um grafo (mesmo se o espaço
+de estados seja um grafo, a pesquisa em árvore trata-o como se fosse uma árvore).
+
+Pelo contrário, a pesquisa em grafo leva em conta que
+o espaço de estados é normalmente um grafo e garante
+que a árvore de pesquisa não tem mais do que um
+caminho para cada estado.
+
+\subsection{Avaliação da pesquisa em árvore
+- factores de ramificação}
+
+Existem vários critérios que permitem avaliar a performance dos vários métodos de pesquisa
+em árvore que podemos utilizar. Os \textbf{fatores de ramificação} dão-nos uma métrica para esta
+avaliação.
+
+\vspace{2mm}
+
+A \textbf{ramificação média} consiste no quociente entre o número de nós resultantes da expansão
+(nós filho) pelo número de nós expandidos (mesmo que não tenham gerado filhos). Indica-nos a
+\uline{dificuldade do problema}.
+
+\[ RM = \frac{N - 1}{X} \]
+
+\begin{flushleft}
+  \textbf{N} - número de nós da árvore de pesquisa no momento em que se encontra a solução
+  
+  \textbf{X} - número de nós expandidos (não terminais).
+
+  \textbf{d} - comprimento do caminho na árvore correspondente à solução.
+
+\end{flushleft}
+
+O \textbf{fator de ramificação efetivo} indica a \uline{eficiência da técnica de pesquisa utilizada} e tenta
+normalizar a ramificação, \uline{determinando o número de nós filho por nó (B)}, numa árvore com
+ramificação constante (progressão geométrica).
+
+\[ 1 + B + B^2 + \dots + B^d = N \] ou seja \[ \frac{B^{d+1} - 1}{B - 1} = N \]
+
+\begin{flushleft}
+  \textbf{Nota:} Resolve-se por métodos numéricos, ou seja, tentativa e erro.
+\end{flushleft}
+
+\subsection{Aplicação: planeamento de
+sequências de ações}
+
+O problema consiste em determinar uma sequência de ações a
+desempenhar por um agente por forma a que, \uline{partindo de um dado
+estado inicial, se atinja um dado objetivo}.
+
+O \textbf{conhecimento do domínio} inclui uma descrição das condições de
+aplicabilidade e efeitos das ações possíveis.
+
+\begin{center}
+  \includegraphics[scale=0.35]{56}
+\end{center}
+
+\pagebreak
+
+\subsection{Representação de ações
+em problemas de planeamento}
+
+\begin{flushleft}
+  \textbf{STRIPS} - Uma abordagem bastante conhecida ao planeamento de soluções
+  (Stanford Institute Problem Solver), desenvolvido nos anos 70.
+\end{flushleft}
+
+A funcionalidade de um dado tipo de operação é definida pelos seus formalismos, através de
+uma estrutura denominada \textbf{operador}, que é composta da seguinte forma:
+
+\begin{itemize}
+  \item \textbf{Pré-condições} - Um conjunto de fórmulas atómicas que representam as
+  condições de aplicabilidade deste tipo de operação.
+
+  \item \textbf{Efeitos negativos} (delete list) - Um conjunto de fórmulas atómicas que representam
+  propriedades do mundo e que deixam de ser verdade ao executar-se a
+  operação.
+
+  \item \textbf{Efeitos positivos} (add list) -  Um conjunto de fórmulas atómicas que representam propriedades do mundo e que
+  passam a ser verdade ao executar-se uma operação.
+\end{itemize}
+
+\subsubsection{Exemplo: planeamento no munudo dos blocos}
+
+\begin{center}
+  \includegraphics[scale=0.4]{57}
+\end{center}
+
+\subsection{Pesquisa A* - heurísticas}
+
+Uma heurística é tanto melhor quanto mais se
+aproximar do custo real. A qualidade de uma heurística
+pode ser medida através do \textbf{fator de ramificação efetiva}, sendo que,
+quanto mais baixo for esse fator, melhor é a heurística.
+
+\vspace{2mm}
+
+Em alguns domínios, há funções de estimação de
+custos que naturalmente constituem heurísticas
+admissíveis (por exemplo, distância em linha reta
+no domínio dos caminhos entre cidades).
+
+\vspace{2mm}
+
+Em muitos outros domínios práticos, não há uma
+heurística admissível que seja óbvia (por exemplo, planeamento
+no mundo dos blocos).
+
+\pagebreak
+
+\subsection{Pesquisa A* - cálculo de heurísticas
+admissíveis em problemas simplificados}
+
+Um \textbf{problema simplificado} (relaxed problem) é um
+problema com \uline{menos restrições} do que o problema
+original.
+
+\vspace{2mm}
+
+É possível gerar automaticamnete formulações simplificadas de problemas
+a partir da formulação original, pelo que a resolução do problema simplificado será feita usando
+pouca ou nenhuma pesquisa. Pode-se assim “inventar” heurísticas, escolhendo a melhor,
+ou combinando-as numa nova heurística.
+
+\begin{flushleft}
+  \textbf{IMPORTANTE:}  custo de uma solução ótima para
+  um problema simplificado constitui uma heurística
+  admissível para o problema original
+\end{flushleft}
+
+\subsection{Pesquisa A* - combinação de heurísticas}
+
+Se tivermos várias heurísticas admissíveis ($h_1, h_2, \dots, h_n$), \uline{podemos
+combiná-las numa nova heurística}:
+
+\[ H(n) = \max \{ h_1(n), h_2(n), \dots, h_n(n) \} \]
+
+Esta nova heurística tem as seguintes propriedades:
+\begin{itemize}
+  \item Admissível;
+  \item Dado que é uma melhor aproximação ao custo real, vai ser
+  uma heurística melhor do que qualquer das outras.
+\end{itemize}
+
+\subsection{Pesquisa A* em aplicações práticas}
+
+\begin{flushleft}
+  \textbf{Principais Vantagens:}
+  \begin{itemize}
+    \item Completa;
+    \item Ótima;
+  \end{itemize}
+
+  \vspace{2mm}
+
+  \textbf{Principais Desvantagens:}
+  \begin{itemize}
+    \item Na maior parte das aplicações, o consumo de memória e tempo de
+    computação têm um \textbf{comportamento exponencial} em função do tamanho
+    da solução;
+    \item Em problemas mais complexos, poderá ser preciso utilizar algoritmos
+    mais eficientes, ainda que sacrificando a otimalidade;
+    \item Ou então, usar heurísticas com uma melhor aproximação média ao custo
+    real, ainda que não sendo estritamente admissíveis, e não garantindo
+    portando a otimalidade da pesquisa
+  \end{itemize}
+\end{flushleft}
+
+\pagebreak
+
+\subsection{IDA*}
+
+\includegraphics[scale=0.35]{58}
+
+\subsection{RBFS}
+
+\includegraphics[scale=0.35]{59}
+
+\subsubsection{Exemplo}
+
+\begin{center}
+  \includegraphics[scale=0.35]{60}
+\end{center}
+
+\pagebreak
+
+\subsection{SMA*}
+
+\includegraphics[scale=0.35]{61}
+
+\subsubsection{Exemplo - espaço de estados}
+
+\begin{center}
+  \includegraphics[scale=0.4]{62}
+
+  \vspace{2mm}
+
+  \includegraphics[scale=0.4]{63}
+
+  \pagebreak
+
+  \includegraphics[scale=0.4]{64}
+\end{center}
 
 
 \end{document}
